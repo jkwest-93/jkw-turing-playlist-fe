@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import SongController from '../SongController/SongController';
 import Playlist from '../Playlist/Playlist';
+import Form from '../Form/Form';
 
 class App extends Component {
   constructor() {
@@ -19,6 +20,10 @@ class App extends Component {
       .catch(error => this.setState({ error: error }))
   }
 
+  addSong = (newSong) => {
+    this.setState({ songQueue: [...this.state.songQueue, newSong]})
+  }
+
   render() {
     return (
       <div className="App">
@@ -27,7 +32,9 @@ class App extends Component {
         </header>
         <div className="App-background">
           <main>
+            <Form addSong={this.addSong}/>
             <Playlist songQueue={this.state.songQueue}/>
+            <SongController />
           </main>
         </div>
       </div>
