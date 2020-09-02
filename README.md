@@ -1,4 +1,6 @@
 ## Turing Playlist - Music Management App
+Jake West, 2005 FE
+MidMod Assessment (Mod 3)
 
 This application was built with `create-react-app`.
 
@@ -37,7 +39,7 @@ Get all existing songs on page load and display them on the DOM.
 
 ### Iteration 2
 
-Create a controlled form component to add a new song to the queue (look into the API documentation to see what pieces of information are expected, and what datatypes it wants each piece to be). As a user types into the input fields, the form component's state should change.  When the user clicks the `Add Song` button, the application should update the App's state.  The new song should display with all of the existing songs. 
+Create a controlled form component to add a new song to the queue (look into the API documentation to see what pieces of information are expected, and what datatypes it wants each piece to be). As a user types into the input fields, the form component's state should change.  When the user clicks the `Add Song` button, the application should update the App's state.  The new song should display with all of the existing songs.
 
 Do not worry about making the POST request to the database yet.
 
