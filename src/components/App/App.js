@@ -27,7 +27,7 @@ class App extends Component {
         </header>
         <div className="App-background">
           <main>
-            <Playlist />
+            <Playlist songQueue={this.state.songQueue}/>
           </main>
         </div>
       </div>
