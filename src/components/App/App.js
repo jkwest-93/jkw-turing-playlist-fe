@@ -39,6 +39,27 @@ class App extends Component {
     .catch(err => console.log(err))
   }
 
+  removeSong = () => {
+    const firstSong = this.state.songQueue[0]
+    const remainingSongs = this.state.songQueue.filter(song => song.id !== firstSong.id)
+    fetch('http://localhost:8080/api/v1/playlist', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify( {id: firstSong} )
+    })
+    .then(response => {
+      if(response.ok) {
+        return response.json()
+      }
+    })
+    .then(deletedSong => {
+      this.setState({ songQueue: remainingSongs})
+    })
+    .catch(err => console.log(err))
+  }
+
   render() {
     return (
       <div className="App">
@@ -49,7 +70,7 @@ class App extends Component {
           <main>
             <Form addSong={this.addSong}/>
             <Playlist songQueue={this.state.songQueue}/>
-            <SongController />
+            <SongController changeSong={this.removeSong}/>
           </main>
         </div>
       </div>
