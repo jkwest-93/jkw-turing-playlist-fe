@@ -38,7 +38,7 @@ class Form extends Component {
   render() {
     return(
       <div className='form-container'>
-        <form>
+        <form aria-label='form'>
           <input id='songName-input' name='songName' placeholder='Song Name' onChange={this.handleChange}/>
           <input id='artistName-input' name='artistName' placeholder='Artist Name' onChange={this.handleChange}/>
           <input id='link-input' name='link' placeholder='Link' onChange={this.handleChange}/>
