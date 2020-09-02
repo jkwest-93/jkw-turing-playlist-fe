@@ -10,7 +10,6 @@ const Song = ({song}) => {
         <p>{song.artistName}</p>
         <a href={song.link}>Watch video!</a>
       </div>
-      <SongController />
     </div>
   )
 }

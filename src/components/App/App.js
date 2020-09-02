@@ -30,6 +30,7 @@ class App extends Component {
           <main>
             <Form />
             <Playlist songQueue={this.state.songQueue}/>
+            <SongController />
           </main>
         </div>
       </div>
