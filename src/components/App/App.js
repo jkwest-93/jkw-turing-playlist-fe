@@ -20,6 +20,10 @@ class App extends Component {
       .catch(error => this.setState({ error: error }))
   }
 
+  addSong = (newSong) => {
+    this.setState({ songQueue: [...this.state.songQueue, newSong]})
+  }
+
   render() {
     return (
       <div className="App">
@@ -28,7 +32,7 @@ class App extends Component {
         </header>
         <div className="App-background">
           <main>
-            <Form />
+            <Form addSong={this.addSong}/>
             <Playlist songQueue={this.state.songQueue}/>
             <SongController />
           </main>
