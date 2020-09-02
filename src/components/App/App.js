@@ -6,10 +6,17 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      songQueue: []
+      songQueue: [],
+      error: '',
     }
   }
 
+  componentDidMount() {
+    fetch('http://localhost:8080/api/v1/playlist')
+      .then(response => response.json())
+      .then(playlist => this.setState({ songQueue: playlist }))
+      .catch(error => this.setState({ error: error }))
+  }
 
   render() {
     return (
@@ -20,7 +27,7 @@ class App extends Component {
         <div className="App-background">
           <main>
           </main>
-        </div> 
+        </div>
       </div>
     )
   }
