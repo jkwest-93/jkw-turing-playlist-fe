@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import SongController from '../SongController/SongController';
 import Playlist from '../Playlist/Playlist';
+import Form from '../Form/Form';
 
 class App extends Component {
   constructor() {
@@ -27,6 +28,7 @@ class App extends Component {
         </header>
         <div className="App-background">
           <main>
+            <Form />
             <Playlist songQueue={this.state.songQueue}/>
           </main>
         </div>
